@@ -1,0 +1,19 @@
+.header {
+    min-height: 7vh;
+    background-color: #282c34;
+
+}
+
+.main {
+    min-height: 93vh;
+}
+
+.aside {
+    background-color: #282c34;
+    padding: 0px !important;
+}
+
+.page {
+    background-color: whitesmoke;
+}
+

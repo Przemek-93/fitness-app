@@ -1,0 +1,41 @@
+.header-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.left-box {
+    display: flex;
+    align-items: center;
+}
+
+.right-box {
+    display: flex;
+    align-items: center;
+}
+
+.logotype {
+    margin: auto;
+    margin-left: 20px;
+}
+
+.navbar-brand {
+    display: flex !important;
+    margin-left: 30px;
+    color: white;
+    font-family: monospace;
+}
+
+.toggle-left {
+    border: none;
+    background-color: #282c34;
+}
+
+.icon-middle {
+    color: white;
+}
+
+a {
+    text-decoration: none !important;
+}

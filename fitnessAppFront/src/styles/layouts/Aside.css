@@ -1,0 +1,63 @@
+div.sidebar {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    text-decoration: none;
+}
+
+ul.nav-list {
+    font-family:  monospace;
+    text-align: left;
+    padding: 0;
+    list-style: none;
+}
+
+.nav-title {
+    text-transform: uppercase;
+    padding: 7px;
+    margin: 15px 0px;
+}
+
+li.nav-item a{
+    display: flex;
+    font-size: small;
+    color: white !important;
+    text-decoration: none;
+    text-transform: capitalize;
+    padding: 15px;
+}
+
+.nav-item-title {
+    margin-left: 15px;
+}
+
+.welcome-box {
+    display: flex;
+    margin: 0px !important;
+    padding: 0px !important;
+    font-family:  monospace;
+    background-color: gray;
+    min-height: 80px;
+}
+
+div.hello {
+    font-size: large;
+    margin: auto;
+    width: 60%;
+}
+
+div.avatar {
+    margin: auto;
+    padding: 5px;
+    width: 30%;
+    height: max-content;
+    float: right;
+}
+
+ul.nav-list a:hover {
+    background-color: gray;
+    border-left: 4px red solid;
+}
+
+ul.nav-list a.active {
+    background-color: gray;
+}
