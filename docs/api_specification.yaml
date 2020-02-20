@@ -1,0 +1,67 @@
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: fitnessApp
+servers:
+  - url: http://127.0.0.1:8000
+paths:
+  /user:
+    post:
+      summary: Create user
+      tags:
+        - User
+      requestBody:
+        description: Object with user properties
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/UserCreateRequest"
+      responses:
+        200:
+          description: User entity
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserCreateResponse"
+components:
+  headers:
+    X-Total-Count:
+      schema:
+        type: integer
+        description: Total number of entities
+  schemas:
+    Identifier:
+      type: integer
+      minimum: 1
+      description: A unique 4 bytes unsigned integer identifier
+    CreatedAt:
+      type: string
+      format: date-time
+      example: "2020-01-28T15:10:28Z"
+    UserCreateRequest:
+      properties:
+        username:
+          type: string
+          example: Jacek
+        email:
+          type: string
+          example: test@test.com
+        password:
+          type: string
+          example: zaq12wsx
+    UserCreateResponse:
+      properties:
+        id:
+          $ref: "#/components/schemas/Identifier"
+        email:
+          type: string
+          example: test@test.com
+        password:
+          type: string
+          example: zaq12wsx
+        createdAt:
+          $ref: "#/components/schemas/CreatedAt"
