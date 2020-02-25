@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import '../../../styles/pages/Register.css';
 import {
     Button,
     Card,
@@ -15,7 +16,7 @@ import {
 
 class Register extends Component {
 
-    registerUrl = 'http://127.0.0.1:8000/user';
+    registerUrl = 'http://127.0.0.1:8000/v1/user';
 
     state = {
         username: '',
@@ -30,7 +31,7 @@ class Register extends Component {
     };
 
     messages = {
-        username_incorrect: "Nazwa musi być dłuższa niż 5 znaków i nie może zawierać spacji",
+        username_incorrect: "Nazwa musi być dłuższa niż 4 znaki i nie może zawierać spacji",
         email_incorrect: "Brak @ w emailu",
         password_incorrect: "Hasło musi zawierać conajmniej 5 znaków",
     };
@@ -74,16 +75,17 @@ class Register extends Component {
                         });
                         return response;
                     } else {
-                        this.setState({
-                            errors: {
-                                username: !validation.username,
-                                email: !validation.email,
-                                password: !validation.password,
-                            }
-                        });
                         throw Error(response.status)
                     }
                 })
+        } else {
+            this.setState({
+                errors: {
+                    username: !validation.username,
+                    email: !validation.email,
+                    password: !validation.password,
+                }
+            });
         }
     };
 
@@ -93,7 +95,7 @@ class Register extends Component {
         let password = false;
         let correct = false;
 
-        if (this.state.username.length > 5 && this.state.username.indexOf(' ') === -1) {
+        if (this.state.username.length > 4 && this.state.username.indexOf(' ') === -1) {
             username = true;
         }
         if (this.state.email.indexOf('@') !== -1) {
@@ -117,7 +119,7 @@ class Register extends Component {
         if (this.state.message !== '') {
             setTimeout(() => this.setState({
                 message: ''
-            }), 3000)
+            }), 7000)
         }
     }
 
@@ -142,8 +144,8 @@ class Register extends Component {
                                             <Input type="text" id="user" name="username" value={username}
                                                    onChange={this.handleChange} placeholder="Nazwa użytkownika"
                                                    autoComplete="Nazwa użytkownika"/>
-                                            {this.state.errors.username &&
-                                            <span>{this.messages.username_incorrect}</span>}
+                                            <div className="validation-errors">{this.state.errors.username &&
+                                            <span>{this.messages.username_incorrect}</span>}</div>
                                         </InputGroup>
                                         <InputGroup className="mb-3">
                                             <InputGroupAddon addonType="prepend">
@@ -152,8 +154,8 @@ class Register extends Component {
                                             <Input type="email" id="email" name="email" value={email}
                                                    onChange={this.handleChange} placeholder="Email"
                                                    autoComplete="email"/>
-                                            {this.state.errors.email &&
-                                            <span>{this.messages.email_incorrect}</span>}
+                                            <div className="validation-errors">{this.state.errors.email &&
+                                            <span>{this.messages.email_incorrect}</span>}</div>
                                         </InputGroup>
                                         <InputGroup className="mb-3">
                                             <InputGroupAddon addonType="prepend">
@@ -164,8 +166,8 @@ class Register extends Component {
                                             <Input type="password" id="password" name="password" value={password}
                                                    onChange={this.handleChange} placeholder="Hasło"
                                                    autoComplete="new-password"/>
-                                            {this.state.errors.password &&
-                                            <span>{this.messages.password_incorrect}</span>}
+                                            <div className="validation-errors">{this.state.errors.password &&
+                                            <span>{this.messages.password_incorrect}</span>}</div>
                                         </InputGroup>
                                         {/*<InputGroup className="mb-4">*/}
                                         {/*    <InputGroupAddon addonType="prepend">*/}
@@ -178,7 +180,7 @@ class Register extends Component {
                                         {/*</InputGroup>*/}
                                         <Button color="success" block>Załóż konto</Button>
                                     </Form>
-                                    {this.state.message && <h3>{this.state.message}</h3>}
+                                    <div className="validation-success">{this.state.message && <h3>{this.state.message}</h3>}</div>
                                 </CardBody>
                             </Card>
                         </Col>

@@ -5,13 +5,14 @@ namespace App\Entity;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  * @ORM\HasLifecycleCallbacks
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -25,24 +26,23 @@ class User
     private $id;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Serializer\Expose()
      * @Serializer\Type("string")
      * @Serializer\Groups({"json", "user"})
-     * @Assert\Length(min = 1, max = 64)
+     * @Assert\Length(min = 5, max = 64, allowEmptyString=false)
      * @Assert\Type("string")
      * @Assert\NotBlank()
      */
     private $username;
 
     /**
-     * @ORM\Column(type="string", length=255)
+     * @ORM\Column(type="string", length=255, unique=true)
      * @Serializer\Expose()
      * @Serializer\Type("string")
      * @Serializer\Groups({"json", "user"})
      * @Assert\Email()
      * @Assert\NotBlank()
-     *
      */
     private $email;
 
@@ -51,7 +51,7 @@ class User
      * @Serializer\Expose()
      * @Serializer\Type("string")
      * @Serializer\Groups({"json", "user"})
-     * @Assert\Length(min = 6, max = 64)
+     * @Assert\Length(min = 5, max = 128, allowEmptyString=false)
      * @Assert\NotBlank()
      */
     private $password;
@@ -61,9 +61,13 @@ class User
      * @Serializer\Expose()
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s\Z', '', 'Y-m-d\TH:i:s\Z'>")
      * @Serializer\Groups({"json", "user"})
-     * @Assert\DateTime()
      */
     private $createdAt;
+
+    public function __construct($username)
+    {
+        $this->username = $username;
+    }
 
     public function getId(): ?int
     {
@@ -104,6 +108,21 @@ class User
         $this->password = $password;
 
         return $this;
+    }
+
+    public function getSalt(): ?string
+    {
+        return null;
+    }
+
+    public function getRoles(): array
+    {
+        return array('ROLE_USER');
+    }
+
+    public function eraseCredentials(): ?string
+    {
+        return null;
     }
 
     public function getCreatedAt(): ?\DateTimeInterface
