@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import '../../../styles/pages/Register.css';
 import {
     Button,
     Card,
@@ -16,7 +17,60 @@ import {
 } from 'reactstrap';
 
 class Login extends Component {
+
+    loginUrl = 'http://127.0.0.1:8000/v1/login';
+
+    state = {
+        username: '',
+        password: '',
+        message: ''
+    };
+
+    handleChange = (e) => {
+        const name = e.target.name;
+        const type = e.target.type;
+
+        if (type === "text" || type === "password") {
+            const value = e.target.value;
+            this.setState({
+                [name]: value
+            })
+        }
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        fetch(this.loginUrl, {
+            method: 'post',
+            body: JSON.stringify({
+                "username": this.state.username,
+                "password": this.state.password
+            })
+        }).then(response => {
+            if (response.ok) {
+                console.log(response);
+                return response;
+            } else {
+                this.setState({
+                    username: '',
+                    password: '',
+                    message: 'Niepoprawne dane',
+                });
+                throw Error(response.status)
+            }
+        })
+    };
+
+    componentDidUpdate() {
+        if (this.state.message !== '') {
+            setTimeout(() => this.setState({
+                message: ''
+            }), 1000)
+        }
+    }
+
     render() {
+        const {username, password} = this.state;
         return (
             <div className="app flex-row align-items-center">
                 <Container>
@@ -25,7 +79,7 @@ class Login extends Component {
                             <CardGroup>
                                 <Card className="p-4">
                                     <CardBody>
-                                        <Form>
+                                        <Form onSubmit={this.handleSubmit}>
                                             <h1>Login</h1>
                                             <p className="text-muted">Zaloguj się do własnego konta</p>
                                             <InputGroup className="mb-3">
@@ -34,8 +88,9 @@ class Login extends Component {
                                                         <i className="icon-user"></i>
                                                     </InputGroupText>
                                                 </InputGroupAddon>
-                                                <Input type="text" placeholder="Nazwa użytkownika"
-                                                       autoComplete="username"/>
+                                                <Input type="text" id="user" name="username" value={username}
+                                                       onChange={this.handleChange} placeholder="Nazwa użytkownika"
+                                                       autoComplete="Nazwa użytkownika"/>
                                             </InputGroup>
                                             <InputGroup className="mb-4">
                                                 <InputGroupAddon addonType="prepend">
@@ -43,7 +98,8 @@ class Login extends Component {
                                                         <i className="icon-lock"></i>
                                                     </InputGroupText>
                                                 </InputGroupAddon>
-                                                <Input type="password" placeholder="Hasło"
+                                                <Input type="password" id="password" name="password" value={password}
+                                                       onChange={this.handleChange} placeholder="Hasło"
                                                        autoComplete="current-password"/>
                                             </InputGroup>
                                             <Row>
@@ -55,6 +111,7 @@ class Login extends Component {
                                                 </Col>
                                             </Row>
                                         </Form>
+                                        <div className="validation-errors">{this.state.message && <h3>{this.state.message}</h3>}</div>
                                     </CardBody>
                                 </Card>
                                 <Card className="text-white bg-primary py-5 d-md-down-none" style={{width: '44%'}}>

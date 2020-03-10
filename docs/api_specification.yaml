@@ -27,6 +27,28 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserCreateResponse"
+  /login:
+    post:
+      summary: Create user
+      tags:
+        - Login
+      requestBody:
+        description: Object with username and password
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/Login"
+      responses:
+        200:
+          description: Token
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Token"
 components:
   headers:
     X-Total-Count:
@@ -65,3 +87,16 @@ components:
           example: zaq12wsx
         createdAt:
           $ref: "#/components/schemas/CreatedAt"
+    Login:
+      properties:
+        username:
+          type: string
+          example: Jacek
+        password:
+          type: string
+          example: zaq12wsx
+    Token:
+      properties:
+        token:
+          type: string
+          example: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9...
