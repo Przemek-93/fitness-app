@@ -19,6 +19,7 @@ import {
 class Login extends Component {
 
     loginUrl = 'http://127.0.0.1:8000/v1/login';
+    loggedUserUrl = 'http://127.0.0.1:8000/v1/user';
 
     state = {
         username: '',
@@ -42,21 +43,43 @@ class Login extends Component {
         e.preventDefault();
         fetch(this.loginUrl, {
             method: 'post',
+            headers: new Headers({
+                'Accept': 'application/json',
+                'Content-Type': 'application/json'
+            }),
             body: JSON.stringify({
                 "username": this.state.username,
                 "password": this.state.password
             })
         }).then(response => {
             if (response.ok) {
-                console.log(response);
-                return response;
+                response.json().then(json => {
+                    localStorage.setItem('token', json.token);
+                });
+                console.log('BEARER ' + localStorage.getItem('token'));
+                fetch(this.loggedUserUrl, {
+                    method: 'get',
+                    headers: new Headers({
+                        'Accept': 'application/json',
+                        'Content-Type': 'application/json',
+                        'Authorization': 'BEARER ' + localStorage.getItem('token')
+                    }),
+                }).then(response => {
+                    if (response.ok) {
+                        localStorage.setItem('user-role', 'user');
+                    } else {
+                        console.log(response.statusText, response.status);
+                        throw Error("Error during get logged user request")
+                    }
+                })
             } else {
                 this.setState({
                     username: '',
                     password: '',
                     message: 'Niepoprawne dane',
                 });
-                throw Error(response.status)
+                console.log(response.statusText, response.status);
+                throw Error("Error during login request")
             }
         })
     };

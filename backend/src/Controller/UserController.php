@@ -36,4 +36,20 @@ class UserController extends AbstractController
             Response::HTTP_OK
         );
     }
+
+    /**
+     * @Route("/user", methods={"GET"})
+     */
+    public function getLogged(): Response
+    {
+        $response = $this->userCrud->getLogged(
+            $this->getUser(),
+            ['user']
+        );
+
+        return new Response(
+            $response,
+            Response::HTTP_OK
+        );
+    }
 }

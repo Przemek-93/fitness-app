@@ -6,6 +6,7 @@ use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Serializer\SerializerAdapterInterface;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
+use Symfony\Component\Security\Core\User\UserInterface;
 use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 class UserCrud extends AbstractDoctrineCrud
@@ -34,6 +35,14 @@ class UserCrud extends AbstractDoctrineCrud
 
         return $this->serializer->serialize(
             $entity,
+            $groups
+        );
+    }
+
+    public function getLogged(UserInterface $user, array $groups = ['json']): string
+    {
+        return $this->serializer->serialize(
+            $user,
             $groups
         );
     }
