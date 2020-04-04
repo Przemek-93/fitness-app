@@ -1,0 +1,10 @@
+.validation-errors {
+  color: crimson;
+  font-size: 0.9rem;
+  width: inherit;
+}
+.validation-success {
+  font-size: 1.2rem;
+  width: inherit;
+  color: darkgreen;
+}

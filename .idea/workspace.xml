@@ -2,93 +2,43 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45a98bcb-5117-4d45-ad28-0db7705dff68" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/composerJson.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/fitnessApp.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/.env" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/bin/console" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/composer.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/composer.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/bootstrap.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/bundles.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/packages/cache.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/packages/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/packages/prod/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/packages/routing.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/packages/test/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/routes.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/routes/dev/framework.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/config/services.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/public/index.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/src/Controller/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/src/Kernel.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppBackend/symfony.lock" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/public/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/public/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/public/logo192.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/public/logo512.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/public/manifest.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/public/robots.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/App.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/actions/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/components /header/Header.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/components /schedules/TrainingsSchedule.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/img/avatar.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/layouts/Aside.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/layouts/Footer.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/layouts/Layout.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/layouts/Navbar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/layouts/Page.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/reducers/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/reducers/sidebar.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/stores/store.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/index.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/layouts/Aside.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/layouts/Footer.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/layouts/Header.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/layouts/Layout.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/layouts/Page.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/pages/Dashboard.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/pages/Diets.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/pages/Efects.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/pages/Error.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/pages/MyAccount.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/pages/Settings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/styles/pages/Trainings.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/dashboard/Dashboard.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/efects/Measure.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/efects/Metamorph.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/error/Error.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/feed/DietPlans.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/feed/MyDiet.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/login /Login.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/register/Register.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/settings/MyAccount.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/settings/Settings.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/trainings/MyActivity.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/src/views/pages/trainings/TrainingPlans.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/fitnessAppFront/yarn.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/app/src/views/pages/login /Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/app/src/views/pages/login /Login.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/api_specification.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/docs/api_specification.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/AuthController.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="DONT_SYNCHRONIZE" updatePackages="false">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution>
       <executable />
     </execution>
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -206,7 +156,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/assets/app/src/styles/pages" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="reference.webide.settings.project.settings.php" />
   </component>
@@ -219,11 +169,11 @@
       <recent name="$PROJECT_DIR$/front/src/styles" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets/app/src/styles/pages" />
+      <recent name="$PROJECT_DIR$/config/packages" />
       <recent name="$PROJECT_DIR$/front/src/styles/pages" />
       <recent name="$PROJECT_DIR$/front/src/views/pages" />
       <recent name="$PROJECT_DIR$/front/src/views/pages/settings" />
-      <recent name="$PROJECT_DIR$/front/src/views/pages/trainings" />
-      <recent name="$PROJECT_DIR$/front/src/views/pages/feed" />
     </key>
   </component>
   <component name="RunManager">
@@ -267,6 +217,10 @@
       <workItem from="1575826352891" duration="97000" />
       <workItem from="1581613202856" duration="652000" />
       <workItem from="1581613864895" duration="1158000" />
+      <workItem from="1582355498339" duration="4312000" />
+      <workItem from="1582566711648" duration="3120000" />
+      <workItem from="1582656241938" duration="4019000" />
+      <workItem from="1583088550505" duration="4553000" />
     </task>
     <servers />
   </component>
@@ -292,93 +246,125 @@
     </ignored-roots>
   </component>
   <component name="WindowStateProjectService">
-    <state x="543" y="185" width="824" height="691" key="#CLI_Interpreters" timestamp="1582218911477">
-      <screen x="0" y="27" width="1920" height="995" />
+    <state x="2306" y="282" width="824" height="691" key="#CLI_Interpreters" timestamp="1582226791509">
+      <screen x="1920" y="160" width="1366" height="768" />
     </state>
     <state x="543" y="185" width="824" height="691" key="#CLI_Interpreters/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218911477" />
+    <state x="2306" y="282" key="#CLI_Interpreters/0.27.1920.995/1920.160.1366.768@1920.160.1366.768" timestamp="1582226791509" />
+    <state x="543" y="182" width="824" height="691" key="#Servers" timestamp="1583092359553">
+      <screen x="0" y="27" width="1920" height="995" />
+    </state>
+    <state x="543" y="182" width="824" height="691" key="#Servers/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583092359553" />
     <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1575304263054">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="643" y="250" width="624" height="533" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040/1920.312.1366.768@0.0.1920.1040" timestamp="1575304263054" />
-    <state x="520" y="33" width="869" height="989" key="CommitChangelistDialog2" timestamp="1582219103631">
+    <state x="693" y="273" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1582661044579">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state x="520" y="33" width="869" height="989" key="CommitChangelistDialog2/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582219103631" />
-    <state x="743" y="292" width="424" height="491" key="FileChooserDialogImpl" timestamp="1582218878362">
+    <state x="693" y="273" width="524" height="509" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582661044579" />
+    <state x="693" y="282" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1582356955254">
       <screen x="0" y="27" width="1920" height="995" />
+    </state>
+    <state x="693" y="282" width="524" height="491" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582356955254" />
+    <state x="520" y="33" width="869" height="989" key="CommitChangelistDialog2" timestamp="1582657737983">
+      <screen x="0" y="27" width="1920" height="995" />
+    </state>
+    <state x="520" y="33" width="869" height="989" key="CommitChangelistDialog2/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582657737983" />
+    <state x="2367" y="452" width="456" height="221" key="ComposerInitDialogKey" timestamp="1582226815803">
+      <screen x="1920" y="160" width="1366" height="768" />
+    </state>
+    <state x="2367" y="452" width="456" height="221" key="ComposerInitDialogKey/0.27.1920.995/1920.160.1366.768@1920.160.1366.768" timestamp="1582226815803" />
+    <state x="2449" y="365" width="374" height="393" key="FileChooserDialogImpl" timestamp="1582226811428">
+      <screen x="1920" y="160" width="1366" height="768" />
     </state>
     <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040/1920.312.1366.768@0.0.1920.1040" timestamp="1575304416647" />
     <state x="743" y="292" width="424" height="491" key="FileChooserDialogImpl/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218878362" />
-    <state width="1874" height="539" key="GridCell.Tab.0.bottom" timestamp="1582218792570">
+    <state x="2449" y="365" width="374" height="393" key="FileChooserDialogImpl/0.27.1920.995/1920.160.1366.768@1920.160.1366.768" timestamp="1582226811428" />
+    <state width="1874" height="369" key="GridCell.Tab.0.bottom" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.0.bottom/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.0.center" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.0.bottom/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187472" />
+    <state width="1874" height="369" key="GridCell.Tab.0.bottom/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.0.center" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.0.center/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.0.left" timestamp="1582218792569">
+    <state width="1874" height="369" key="GridCell.Tab.0.center/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187472" />
+    <state width="1874" height="369" key="GridCell.Tab.0.center/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.0.left" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.0.left/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792569" />
-    <state width="1874" height="539" key="GridCell.Tab.0.right" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.0.left/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187472" />
+    <state width="1874" height="369" key="GridCell.Tab.0.left/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.0.right" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.0.right/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.1.bottom" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.0.right/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187472" />
+    <state width="1874" height="369" key="GridCell.Tab.0.right/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.1.bottom" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.1.bottom/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.1.center" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.1.bottom/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187473" />
+    <state width="1874" height="369" key="GridCell.Tab.1.bottom/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.1.center" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.1.center/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.1.left" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.1.center/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187472" />
+    <state width="1874" height="369" key="GridCell.Tab.1.center/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.1.left" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.1.left/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.1.right" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.1.left/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187472" />
+    <state width="1874" height="369" key="GridCell.Tab.1.left/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.1.right" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.1.right/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.2.bottom" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.1.right/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187473" />
+    <state width="1874" height="369" key="GridCell.Tab.1.right/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.2.bottom" timestamp="1583093206777">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.2.bottom/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.2.center" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.2.bottom/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187473" />
+    <state width="1874" height="369" key="GridCell.Tab.2.bottom/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206777" />
+    <state width="1874" height="369" key="GridCell.Tab.2.center" timestamp="1583093206777">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.2.center/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.2.left" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.2.center/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187473" />
+    <state width="1874" height="369" key="GridCell.Tab.2.center/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206777" />
+    <state width="1874" height="369" key="GridCell.Tab.2.left" timestamp="1583093206776">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.2.left/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state width="1874" height="539" key="GridCell.Tab.2.right" timestamp="1582218792570">
+    <state width="1874" height="369" key="GridCell.Tab.2.left/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187473" />
+    <state width="1874" height="369" key="GridCell.Tab.2.left/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206776" />
+    <state width="1874" height="369" key="GridCell.Tab.2.right" timestamp="1583093206777">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state width="1874" height="539" key="GridCell.Tab.2.right/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218792570" />
-    <state x="449" y="159" width="1022" height="737" key="SettingsEditor" timestamp="1582218923939">
+    <state width="1874" height="369" key="GridCell.Tab.2.right/0.27.1360.683/1920.160.1366.768@0.27.1360.683" timestamp="1582577187473" />
+    <state width="1874" height="369" key="GridCell.Tab.2.right/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583093206777" />
+    <state x="179" y="322" width="591" height="412" key="NewPhpClassDialog" timestamp="1582229643075">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state x="449" y="159" width="1022" height="737" key="SettingsEditor/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582218923939" />
-    <state x="624" y="237" key="run.anything.popup" timestamp="1581614792496">
+    <state x="179" y="322" width="591" height="412" key="NewPhpClassDialog/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582229643075" />
+    <state x="2061" y="191" width="1078" height="737" key="SettingsEditor" timestamp="1582226842780">
+      <screen x="1920" y="160" width="1366" height="768" />
+    </state>
+    <state x="449" y="159" width="1022" height="737" key="SettingsEditor/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582219930782" />
+    <state x="2061" y="191" width="1078" height="737" key="SettingsEditor/0.27.1920.995/1920.160.1366.768@1920.160.1366.768" timestamp="1582226842780" />
+    <state width="960" height="497" key="XDebugger.FullValuePopup" timestamp="1582228107547">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state x="624" y="237" key="run.anything.popup/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1581614792496" />
-    <state x="623" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1582219034028">
+    <state width="960" height="497" key="XDebugger.FullValuePopup/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582228107547" />
+    <state x="589" y="219" width="741" height="610" key="find.popup" timestamp="1582569027533">
       <screen x="0" y="27" width="1920" height="995" />
     </state>
-    <state x="623" y="244" width="672" height="678" key="search.everywhere.popup/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582219034028" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/src/Controller/UserController.php</url>
-          <line>25</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <state x="589" y="219" width="741" height="610" key="find.popup/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582569027533" />
+    <state x="624" y="237" key="run.anything.popup" timestamp="1582229764250">
+      <screen x="0" y="27" width="1920" height="995" />
+    </state>
+    <state x="624" y="237" key="run.anything.popup/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1582229764250" />
+    <state x="623" y="244" width="672" height="678" key="search.everywhere.popup" timestamp="1583092597135">
+      <screen x="0" y="27" width="1920" height="995" />
+    </state>
+    <state x="623" y="244" width="672" height="678" key="search.everywhere.popup/0.27.1920.995/1920.160.1366.768@0.27.1920.995" timestamp="1583092597135" />
   </component>
 </project>
