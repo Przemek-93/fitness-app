@@ -5,12 +5,10 @@ declare(strict_types=1);
 namespace DoctrineMigrations;
 
 use Doctrine\DBAL\Schema\Schema;
+use Doctrine\DBAL\Types\Types;
 use Doctrine\Migrations\AbstractMigration;
 
-/**
- * Auto-generated Migration: Please modify to your needs!
- */
-final class Version20200213200633 extends AbstractMigration
+final class Version20200415163237 extends AbstractMigration
 {
     public function getDescription() : string
     {
@@ -19,7 +17,9 @@ final class Version20200213200633 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
+        $userTable = $schema->dropTable('user');
         $userTable = $schema->createTable('user');
+        $roleTable = $schema->getTable('role');
 
         $userTable->addColumn(
             'id',
@@ -47,6 +47,20 @@ final class Version20200213200633 extends AbstractMigration
         );
 
         $userTable->addColumn(
+            'role_id',
+            Types::INTEGER,
+            ['notnull' => false]
+        );
+
+        $userTable->addForeignKeyConstraint(
+            $roleTable,
+            ['role_id'],
+            ['id'],
+            [],
+            'FK_HAS_USER_ROLE'
+        );
+
+        $userTable->addColumn(
             'created_at',
             'datetime',
             ['notnull' => true, 'default' => 'CURRENT_TIMESTAMP']
@@ -55,9 +69,6 @@ final class Version20200213200633 extends AbstractMigration
 
     public function down(Schema $schema) : void
     {
-        // this down() migration is auto-generated, please modify it to your needs
-        $this->abortIf($this->connection->getDatabasePlatform()->getName() !== 'mysql', 'Migration can only be executed safely on \'mysql\'.');
-
-        $this->addSql('DROP TABLE user');
+        $schema->dropTable('user');
     }
 }

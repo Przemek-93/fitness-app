@@ -14,7 +14,8 @@
 ###< symfony/web-server-bundle ###
 composer.lock
 symfony.lock
-/.idea/
+../.idea
+docker/logs
 ###> lexik/jwt-authentication-bundle ###
 /config/jwt/*.pem
 ###< lexik/jwt-authentication-bundle ###

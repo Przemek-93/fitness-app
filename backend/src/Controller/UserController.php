@@ -44,7 +44,7 @@ class UserController extends AbstractController
     {
         $response = $this->userCrud->getLogged(
             $this->getUser(),
-            ['user']
+            ['user', 'user-role']
         );
 
         return new Response(

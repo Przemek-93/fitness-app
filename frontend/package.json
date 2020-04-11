@@ -5,6 +5,7 @@
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.25",
     "@fortawesome/react-fontawesome": "^0.1.7",
+    "@syncfusion/ej2-react-schedule": "^18.1.44",
     "bootstrap": "^4.4.1",
     "font-awesome": "^4.7.0",
     "globalize": "^1.4.2",

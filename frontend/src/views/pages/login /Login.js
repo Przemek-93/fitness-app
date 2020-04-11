@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
-import {Link} from 'react-router-dom';
+import {Link, Redirect} from 'react-router-dom';
+import {loggedUser, login} from "../../../utils/apiUrl";
 import '../../../styles/pages/Register.css';
 import {
     Button,
@@ -17,9 +18,6 @@ import {
 } from 'reactstrap';
 
 class Login extends Component {
-
-    loginUrl = 'http://127.0.0.1:8000/v1/login';
-    loggedUserUrl = 'http://127.0.0.1:8000/v1/user';
 
     state = {
         username: '',
@@ -41,7 +39,7 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        fetch(this.loginUrl, {
+        fetch(login, {
             method: 'post',
             headers: new Headers({
                 'Accept': 'application/json',
@@ -54,32 +52,37 @@ class Login extends Component {
         }).then(response => {
             if (response.ok) {
                 response.json().then(json => {
-                    localStorage.setItem('token', json.token);
-                });
-                console.log('BEARER ' + localStorage.getItem('token'));
-                fetch(this.loggedUserUrl, {
-                    method: 'get',
-                    headers: new Headers({
-                        'Accept': 'application/json',
-                        'Content-Type': 'application/json',
-                        'Authorization': 'BEARER ' + localStorage.getItem('token')
-                    }),
+                    localStorage.setItem('token', 'BEARER '.concat(json.token));
                 }).then(response => {
+                    fetch(loggedUser, {
+                        method: 'get',
+                        headers: new Headers({
+                            'Accept': 'application/json',
+                            'Content-Type': 'application/json',
+                            'Authorization': localStorage.getItem('token')
+                        }),
+                    }).then(response => {
                     if (response.ok) {
-                        localStorage.setItem('user-role', 'user');
+                        response.json().then(json => {
+                            localStorage.setItem('user', JSON.stringify({
+                                    "username": json.username,
+                                    "email": json.email,
+                                    "role": json.role.name
+                                })
+                            )
+                        });
+                        this.props.history.push('/');
                     } else {
-                        console.log(response.statusText, response.status);
-                        throw Error("Error during get logged user request")
+                        console.log(response.statusText, response.status, "Error during get logged user request");
                     }
-                })
+                })})
             } else {
                 this.setState({
                     username: '',
                     password: '',
                     message: 'Niepoprawne dane',
                 });
-                console.log(response.statusText, response.status);
-                throw Error("Error during login request")
+                console.log(response.statusText, response.status, "Error during login request");
             }
         })
     };
@@ -88,7 +91,7 @@ class Login extends Component {
         if (this.state.message !== '') {
             setTimeout(() => this.setState({
                 message: ''
-            }), 1000)
+            }), 10000)
         }
     }
 

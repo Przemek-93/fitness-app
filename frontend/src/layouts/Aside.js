@@ -8,13 +8,14 @@ import avatar from '../img/avatar.png';
 class Aside extends Component {
 
     render() {
-
+        const username = (JSON.parse(localStorage.user).username)
         return (
             <>
                 <div className="sidebar">
                     <div className="welcome-box">
                         <div className="hello">
-                            Witaj <br />Przemek
+                            Witaj <br />
+                            <strong>{username.toUpperCase()}</strong>
                         </div>
                         <div className="avatar">
                             <img src={avatar} className="media-object img-thumbnail user-img rounded-circle admin_img3" alt="avatar"/>
