@@ -1,0 +1,34 @@
+echo 'Write [start/stop] what you want to do with app?'
+read command
+
+dir=$(pwd)
+
+if [ $command == start ] || [ $command == START ]
+then
+cd $dir/frontend/
+echo STARTING REACT FRONTEND APPLICATION
+docker-compose up -d
+
+cd $dir/backend/docker/
+echo STARTING PHP BACKEND APPLICATION
+docker-compose up -d
+fi
+
+
+if [ $command == stop ] || [ $command == STOP ]
+then
+cd $dir/frontend/
+echo STOPPING REACT FRONTEND APPLICATION
+docker-compose stop
+
+cd $dir/backend/docker/
+echo STOPPING PHP BACKEND APPLICATION
+docker-compose stop
+fi
+
+if [ $command == stop ] || [ $command == start ] || [ $command == STOP ] || [ $command == START ]
+then
+echo DONE
+else
+echo BAD COMMAND! Please use start or stop
+fi

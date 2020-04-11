@@ -1,0 +1,33 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: verysecret
+      MYSQL_DATABASE: database
+      MYSQL_USER: fitnessapp
+      MYSQL_PASSWORD: secret
+    ports:
+      - '5433:5432'
+  php:
+    build: php-fpm
+    ports:
+      - '9002:9000'
+    volumes:
+      - ../:/var/www/symfony:cached
+      - ./logs/symfony:/var/www/symfony/var/logs:cached
+    environment:
+      XDEBUG_CONFIG: remote_host=172.18.0.1 remote_port=9000
+      PHP_IDE_CONFIG: serverName=Docker
+    links:
+      - mysql
+  nginx:
+    build: nginx
+    ports:
+      - '8080:80'
+    links:
+      - php
+    volumes_from:
+      - php
+    volumes:
+      - ./logs/nginx/:/var/log/nginx:cached
