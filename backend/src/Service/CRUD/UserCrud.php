@@ -2,6 +2,7 @@
 
 namespace App\Service\CRUD;
 
+use App\Entity\Role;
 use App\Entity\User;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Serializer\SerializerAdapterInterface;
@@ -29,6 +30,7 @@ class UserCrud extends AbstractDoctrineCrud
         $entity = $this->serializer->deserialize($post, $this->entityName, $groups);
         $errors = $this->validator->validate($entity, null);
         $this->convertErrors($errors);
+        $entity->setRole($this->entityManager->getRepository(Role::class)->findOneBy(['name' => 'User']));
         $entity->setPassword($this->encoder->encodePassword($entity, $entity->getPassword()));
         $this->entityManager->persist($entity);
         $this->entityManager->flush();

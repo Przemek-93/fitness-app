@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import {register} from "../../../utils/apiUrl";
 import '../../../styles/pages/Register.css';
 import {
     Button,
@@ -15,8 +16,6 @@ import {
 } from 'reactstrap';
 
 class Register extends Component {
-
-    registerUrl = 'http://127.0.0.1:8080/v1/user';
 
     state = {
         username: '',
@@ -49,18 +48,18 @@ class Register extends Component {
     };
 
     handleSubmit = (e) => {
+        console.log(register);
         e.preventDefault();
         const validation = this.formValidation();
         if (validation.correct) {
-            fetch(this.registerUrl, {
+            fetch(register, {
                 method: 'post',
                 body: JSON.stringify({
                     "username": this.state.username,
                     "email": this.state.email,
                     "password": this.state.password
                 })
-            })
-                .then(response => {
+            }).then(response => {
                     if (response.ok) {
                         this.setState({
                             username: '',
@@ -73,7 +72,7 @@ class Register extends Component {
                                 password: false,
                             }
                         });
-                        return response;
+                        setTimeout(() => this.props.history.push('/login'), 5000)
                     } else {
                         throw Error(response.status)
                     }
@@ -119,7 +118,7 @@ class Register extends Component {
         if (this.state.message !== '') {
             setTimeout(() => this.setState({
                 message: ''
-            }), 7000)
+            }), 5000)
         }
     }
 

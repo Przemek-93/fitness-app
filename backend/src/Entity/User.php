@@ -57,6 +57,15 @@ class User implements UserInterface
     private $password;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Role", inversedBy="users", fetch="EAGER")
+     * @ORM\JoinColumn(nullable=true)
+     * @Serializer\Expose()
+     * @Serializer\Type("App\Entity\Role")
+     * @Serializer\Groups({"json", "user-role"})
+     */
+    private $role;
+
+    /**
      * @ORM\Column(type="datetime")
      * @Serializer\Expose()
      * @Serializer\Type("DateTime<'Y-m-d\TH:i:s\Z', '', 'Y-m-d\TH:i:s\Z'>")
@@ -143,5 +152,17 @@ class User implements UserInterface
     public function prePersistEvent()
     {
         $this->createdAt = new DateTime('NOW');
+    }
+
+    public function getRole(): ?Role
+    {
+        return $this->role;
+    }
+
+    public function setRole(?Role $role): self
+    {
+        $this->role = $role;
+
+        return $this;
     }
 }
