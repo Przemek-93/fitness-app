@@ -3,7 +3,7 @@ info:
   version: 1.0.0
   title: fitnessApp
 servers:
-  - url: http://127.0.0.1:8000
+  - url: http://127.0.0.1:8080
 paths:
   /user:
     post:
@@ -18,8 +18,8 @@ paths:
             schema:
               $ref: "#/components/schemas/UserCreateRequest"
       responses:
-        200:
-          description: User entity
+        201:
+          description: Created
           headers:
             X-Total-Count:
               $ref: '#/components/headers/X-Total-Count'
@@ -27,9 +27,42 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/UserCreateResponse"
+  /user/:
+    get:
+      summary: Get logged user
+      tags:
+        - User
+      responses:
+        200:
+          description: OK
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserLoggedResponse"
+  /user/{userId}:
+    delete:
+      summary: Delete user by id
+      tags:
+        - User
+      parameters:
+        - name: userId
+          in: path
+          required: true
+          description: User id
+          schema:
+            $ref: "#/components/schemas/Identifier"
+      responses:
+        200:
+          description: OK
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
   /login:
     post:
-      summary: Create user
+      summary: Request for login
       tags:
         - Login
       requestBody:
@@ -41,7 +74,7 @@ paths:
               $ref: "#/components/schemas/Login"
       responses:
         200:
-          description: Token
+          description: OK
           headers:
             X-Total-Count:
               $ref: '#/components/headers/X-Total-Count'
@@ -49,6 +82,61 @@ paths:
             application/json:
               schema:
                 $ref: "#/components/schemas/Token"
+  /role:
+    post:
+      summary: Create role
+      tags:
+        - Role
+      requestBody:
+        description: Object with role properties
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/RoleCreateRequest"
+      responses:
+        201:
+          description: Created
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoleCreateResponse"
+  /roles:
+      get:
+        summary: Get roles
+        tags:
+          - Role
+        responses:
+          200:
+            description: OK
+            headers:
+              X-Total-Count:
+                $ref: '#/components/headers/X-Total-Count'
+            content:
+              application/json:
+                schema:
+                  $ref: "#/components/schemas/RoleCreateResponse"
+  /role/{roleId}:
+      delete:
+        summary: Delete role by id
+        tags:
+          - Role
+        parameters:
+          - name: roleId
+            in: path
+            required: true
+            description: Role id
+            schema:
+              $ref: "#/components/schemas/Identifier"
+        responses:
+          200:
+            description: OK
+            headers:
+              X-Total-Count:
+                $ref: '#/components/headers/X-Total-Count'
 components:
   headers:
     X-Total-Count:
@@ -59,6 +147,7 @@ components:
     Identifier:
       type: integer
       minimum: 1
+      example: 1
       description: A unique 4 bytes unsigned integer identifier
     CreatedAt:
       type: string
@@ -68,7 +157,7 @@ components:
       properties:
         username:
           type: string
-          example: Jacek
+          example: Jack
         email:
           type: string
           example: test@test.com
@@ -76,6 +165,36 @@ components:
           type: string
           example: zaq12wsx
     UserCreateResponse:
+      properties:
+        id:
+          $ref: "#/components/schemas/Identifier"
+        email:
+          type: string
+          example: test@test.com
+        password:
+          type: string
+          example: zaq12wsx
+        createdAt:
+          $ref: "#/components/schemas/CreatedAt"
+    RoleCreateRequest:
+      properties:
+        name:
+          type: string
+          example: User
+        rights:
+          type: string
+          example: all
+    RoleCreateResponse:
+      properties:
+        id:
+          $ref: "#/components/schemas/Identifier"
+        name:
+          type: string
+          example: User
+        rights:
+          type: string
+          example: all
+    UserLoggedResponse:
       properties:
         id:
           $ref: "#/components/schemas/Identifier"

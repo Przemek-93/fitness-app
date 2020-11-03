@@ -31,7 +31,6 @@ class Role
      * @Serializer\Expose()
      * @Serializer\Type("string")
      * @Serializer\Groups({"json", "user", "role"})
-     * @Serializer\ReadOnly(true)
      * @Assert\NotNull()
      */
     private $name;
@@ -41,7 +40,6 @@ class Role
      * @Serializer\Expose()
      * @Serializer\Type("string")
      * @Serializer\Groups({"json", "user", "role"})
-     * @Serializer\ReadOnly(true)
      * @Assert\NotNull()
      */
     private $rights;

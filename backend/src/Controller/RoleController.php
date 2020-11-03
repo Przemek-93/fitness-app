@@ -2,7 +2,7 @@
 
 namespace App\Controller;
 
-use App\Service\CRUD\UserCrud;
+use App\Service\CRUD\RoleCrud;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -11,25 +11,38 @@ use Symfony\Component\Routing\Annotation\Route;
 /**
  * @Route("/v1")
  */
-class UserController extends AbstractController
+class RoleController extends AbstractController
 {
-    protected UserCrud $userCrud;
+    protected RoleCrud $roleCrud;
 
     public function __construct(
-        UserCrud $userCrud
+        RoleCrud $roleCrud
     ) {
-        $this->userCrud = $userCrud;
+        $this->roleCrud = $roleCrud;
     }
 
     /**
-     * @Route("/user", methods={"POST"})
+     * @Route("/role", methods={"POST"})
      */
     public function create(Request $request): Response
     {
-        $response = $this->userCrud->create(
+        $response = $this->roleCrud->create(
             $request->getContent(),
-            ['user']
+            ['role']
         );
+
+        return new Response(
+            $response,
+            Response::HTTP_CREATED
+        );
+    }
+
+    /**
+     * @Route("/roles", methods={"GET"})
+     */
+    public function getRoles(): Response
+    {
+        $response = $this->roleCrud->readAll(['role']);
 
         return new Response(
             $response,
@@ -38,27 +51,11 @@ class UserController extends AbstractController
     }
 
     /**
-     * @Route("/user", methods={"GET"})
+     * @Route("/role/{roleId}", methods={"DELETE"})
      */
-    public function getLogged(): Response
+    public function deleteRole(int $roleId): Response
     {
-        $response = $this->userCrud->getLogged(
-            $this->getUser(),
-            ['user', 'user-role']
-        );
-
-        return new Response(
-            $response,
-            Response::HTTP_OK
-        );
-    }
-
-    /**
-     * @Route("/user/{userId}", methods={"DELETE"})
-     */
-    public function deleteUser(int $userId): Response
-    {
-        $this->userCrud->delete($userId);
+        $this->roleCrud->delete($roleId);
 
         return new Response(
             Response::HTTP_OK
