@@ -17,7 +17,6 @@ final class Version20200415163237 extends AbstractMigration
 
     public function up(Schema $schema) : void
     {
-        $userTable = $schema->dropTable('user');
         $userTable = $schema->createTable('user');
         $roleTable = $schema->getTable('role');
 

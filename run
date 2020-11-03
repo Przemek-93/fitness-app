@@ -9,7 +9,7 @@ cd $dir/frontend/
 echo STARTING REACT FRONTEND APPLICATION
 docker-compose up -d
 
-cd $dir/backend/docker/
+cd $dir/backend/
 echo STARTING PHP BACKEND APPLICATION
 docker-compose up -d
 fi
@@ -21,7 +21,7 @@ cd $dir/frontend/
 echo STOPPING REACT FRONTEND APPLICATION
 docker-compose stop
 
-cd $dir/backend/docker/
+cd $dir/backend/
 echo STOPPING PHP BACKEND APPLICATION
 docker-compose stop
 fi

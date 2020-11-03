@@ -66,12 +66,11 @@ class Login extends Component {
                         response.json().then(json => {
                             localStorage.setItem('user', JSON.stringify({
                                     "username": json.username,
-                                    "email": json.email,
-                                    "role": json.role.name
+                                    "email": json.email
                                 })
                             )
                         });
-                        this.props.history.push('/');
+                        this.props.history.push('/dashboard');
                     } else {
                         console.log(response.statusText, response.status, "Error during get logged user request");
                     }

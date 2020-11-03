@@ -8,13 +8,11 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\Security\Core\User\UserInterface;
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
 
-
 /**
  * @Route("/v1")
  */
 class AuthController extends ApiController
 {
-
     /**
      * @Route("/login")
      */

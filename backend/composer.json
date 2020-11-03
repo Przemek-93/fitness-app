@@ -14,7 +14,7 @@
         "guzzlehttp/psr7": "^1.6",
         "jms/serializer-bundle": "^3.5",
         "lexik/jwt-authentication-bundle": "^2.6",
-        "nelmio/cors-bundle": "^2.0",
+        "nelmio/cors-bundle": "^2.1",
         "psr/container": "^1.0",
         "psr/log": "^1.0",
         "symfony/console": "5.0.*",

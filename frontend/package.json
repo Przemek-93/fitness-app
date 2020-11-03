@@ -7,6 +7,7 @@
     "@fortawesome/react-fontawesome": "^0.1.7",
     "@syncfusion/ej2-react-schedule": "^18.1.44",
     "bootstrap": "^4.4.1",
+    "cors": "^2.8.5",
     "font-awesome": "^4.7.0",
     "globalize": "^1.4.2",
     "moment": "^2.24.0",

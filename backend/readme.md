@@ -10,6 +10,7 @@ openssl genrsa -out config/jwt/private.pem -aes256 4096
 openssl rsa -pubout -in config/jwt/private.pem -out config/jwt/public.pem
 
 - edit passphrase in .env
+- edit permission: sudo chmod 644 public.pem private.pem
 
 - doc:
 https://medium.com/@h.benkachoud/symfony-rest-api-without-fosrestbundle-using-jwt-authentication-part-2-be394d0924dd
