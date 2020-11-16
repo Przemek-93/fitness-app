@@ -10,7 +10,6 @@ use Symfony\Component\Validator\Validator\ValidatorInterface;
 
 abstract class AbstractDoctrineCrud
 {
-
     protected EntityManagerInterface $entityManager;
     protected SerializerAdapterInterface $serializer;
     protected ValidatorInterface $validator;

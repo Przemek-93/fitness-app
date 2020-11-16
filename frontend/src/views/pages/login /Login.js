@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import {loggedUser, login} from "../../../utils/apiUrl";
+import {Link} from 'react-router-dom';
+import {loggedUserUrl, loginUrl } from "../../../utils/apiUrl";
 import '../../../styles/pages/Register.css';
 import {
     Button,
@@ -39,7 +39,7 @@ class Login extends Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
-        fetch(login, {
+        fetch(loginUrl , {
             method: 'post',
             headers: new Headers({
                 'Accept': 'application/json',
@@ -52,25 +52,26 @@ class Login extends Component {
         }).then(response => {
             if (response.ok) {
                 response.json().then(json => {
-                    localStorage.setItem('token', 'BEARER '.concat(json.token));
+                    sessionStorage.setItem('token', 'BEARER '.concat(json.token));
                 }).then(response => {
-                    fetch(loggedUser, {
+                    fetch(loggedUserUrl, {
                         method: 'get',
                         headers: new Headers({
                             'Accept': 'application/json',
                             'Content-Type': 'application/json',
-                            'Authorization': localStorage.getItem('token')
+                            'Authorization': sessionStorage.getItem('token')
                         }),
                     }).then(response => {
                     if (response.ok) {
                         response.json().then(json => {
-                            localStorage.setItem('user', JSON.stringify({
+                            sessionStorage.setItem('user', JSON.stringify({
                                     "username": json.username,
-                                    "email": json.email
+                                    "email": json.email,
+                                    "role": json.role.name
                                 })
                             )
                         });
-                        this.props.history.push('/dashboard');
+                        this.props.history.push('/');
                     } else {
                         console.log(response.statusText, response.status, "Error during get logged user request");
                     }

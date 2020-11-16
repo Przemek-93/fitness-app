@@ -20,12 +20,12 @@ class Page extends Component {
             <>
                 <Switch>
                     <Route path="/dashboard" exact component={Dashboard}/>
-                    <Route path="/trenings/plan" component={TrainingPlans}/>
-                    <Route path="/trenings/my-activity" component={MyActivity}/>
+                    <Route path="/trainings/plan" component={TrainingPlans}/>
+                    <Route path="/trainings/my-activity" component={MyActivity}/>
                     <Route path="/diet/plan" component={DietPlans}/>
                     <Route path="/diet/my-diet" component={MyDiet}/>
-                    <Route path="/efects/changes" component={Metamorph}/>
-                    <Route path="/efects/measure" component={Measure}/>
+                    <Route path="/effects/changes" component={Metamorph}/>
+                    <Route path="/effects/measure" component={Measure}/>
                     <Route path="/settings" component={Settings}/>
                     <Route path="/my-account" component={MyAccount}/>
                     <Route exact component={Error}/>

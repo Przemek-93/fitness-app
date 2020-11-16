@@ -3,6 +3,9 @@
 namespace App\Entity;
 
 use DateTime;
+use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -73,9 +76,18 @@ class User implements UserInterface
      */
     private $createdAt;
 
+    /**
+     * @ORM\OneToMany(targetEntity=TrainingActivity::class, mappedBy="user", orphanRemoval=true)
+     * @Serializer\Expose()
+     * @Serializer\Type("ArrayCollection<App\Entity\TrainingActivity>")
+     * @Serializer\Groups({"json", "user-trainingActivity"})
+     */
+    private $trainingActivities;
+
     public function __construct($username)
     {
         $this->username = $username;
+        $this->trainingActivities = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -126,7 +138,7 @@ class User implements UserInterface
 
     public function getRoles(): array
     {
-        return array('ROLE_USER');
+        return ['ROLE_USER'];
     }
 
     public function eraseCredentials(): ?string
@@ -134,12 +146,12 @@ class User implements UserInterface
         return null;
     }
 
-    public function getCreatedAt(): ?\DateTimeInterface
+    public function getCreatedAt(): ?DateTimeInterface
     {
         return $this->createdAt;
     }
 
-    public function setCreatedAt(\DateTimeInterface $createdAt): self
+    public function setCreatedAt(DateTimeInterface $createdAt): self
     {
         $this->createdAt = $createdAt;
 
@@ -149,7 +161,7 @@ class User implements UserInterface
     /**
      *  @ORM\PrePersist
      */
-    public function prePersistEvent()
+    public function prePersistEvent(): void
     {
         $this->createdAt = new DateTime('NOW');
     }
@@ -162,6 +174,36 @@ class User implements UserInterface
     public function setRole(?Role $role): self
     {
         $this->role = $role;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|TrainingActivity[]
+     */
+    public function getTrainingActivities(): Collection
+    {
+        return $this->trainingActivities;
+    }
+
+    public function addTrainingActivity(TrainingActivity $trainingActivity): self
+    {
+        if (!$this->trainingActivities->contains($trainingActivity)) {
+            $this->trainingActivities[] = $trainingActivity;
+            $trainingActivity->setUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeTrainingActivity(TrainingActivity $trainingActivity): self
+    {
+        if ($this->trainingActivities->removeElement($trainingActivity)) {
+            // set the owning side to null (unless already changed)
+            if ($trainingActivity->getUser() === $this) {
+                $trainingActivity->setUser(null);
+            }
+        }
 
         return $this;
     }

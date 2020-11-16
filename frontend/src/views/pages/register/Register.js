@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {register} from "../../../utils/apiUrl";
+import {registerUrl} from "../../../utils/apiUrl";
 import '../../../styles/pages/Register.css';
 import {
     Button,
@@ -48,11 +48,10 @@ class Register extends Component {
     };
 
     handleSubmit = (e) => {
-        console.log(register);
         e.preventDefault();
         const validation = this.formValidation();
         if (validation.correct) {
-            fetch(register, {
+            fetch(registerUrl, {
                 method: 'post',
                 body: JSON.stringify({
                     "username": this.state.username,

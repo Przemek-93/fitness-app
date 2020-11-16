@@ -22,26 +22,26 @@ final class Version20200415163237 extends AbstractMigration
 
         $userTable->addColumn(
             'id',
-            'integer',
+            Types::INTEGER,
             ['autoincrement' => true]
         );
         $userTable->setPrimaryKey(['id']);
 
         $userTable->addColumn(
             'username',
-            'string',
+            Types::STRING,
             ['notnull' => true, 'length' => 255, 'unique' => true]
         );
 
         $userTable->addColumn(
             'email',
-            'string',
+            Types::STRING,
             ['notnull' => true, 'length' => 255, 'unique' => true]
         );
 
         $userTable->addColumn(
             'password',
-            'string',
+            Types::STRING,
             ['notnull' => true, 'length' => 255, 'unique' => true]
         );
 
@@ -61,7 +61,7 @@ final class Version20200415163237 extends AbstractMigration
 
         $userTable->addColumn(
             'created_at',
-            'datetime',
+            Types::DATETIME_IMMUTABLE,
             ['notnull' => true, 'default' => 'CURRENT_TIMESTAMP']
         );
     }

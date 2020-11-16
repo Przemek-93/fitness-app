@@ -8,7 +8,6 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
-
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RoleRepository")
  * @Serializer\ExclusionPolicy("all")

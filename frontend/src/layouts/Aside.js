@@ -4,11 +4,10 @@ import {NavLink} from "react-router-dom";
 import '../styles/layouts/Aside.css';
 import avatar from '../img/avatar.png';
 
-
 class Aside extends Component {
 
     render() {
-        const username = (JSON.parse(localStorage.user).username)
+        const username = (JSON.parse(sessionStorage.user).username)
         return (
             <>
                 <div className="sidebar">
@@ -29,10 +28,10 @@ class Aside extends Component {
                         <h6 className="nav-title">Treningi</h6>
 
                         <li className="nav-item">
-                            <NavLink to={"/trenings/plan"} exact={false}><i className="fas fa-columns"></i><span className="nav-item-title">Plan treningowy</span></NavLink>
+                            <NavLink to={"/trainings/plan"} exact={false}><i className="fas fa-columns"></i><span className="nav-item-title">Plan treningowy</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={"/trenings/my-activity"} exact={false}><i className="fas fa-running"></i><span className="nav-item-title">Moja aktywność</span></NavLink>
+                            <NavLink to={"/trainings/my-activity"} exact={false}><i className="fas fa-running"></i><span className="nav-item-title">Moja aktywność</span></NavLink>
                         </li>
 
                         <h6 className="nav-title">Odżywianie</h6>
@@ -45,10 +44,10 @@ class Aside extends Component {
 
                         <h6 className="nav-title">Efekty</h6>
                         <li className="nav-item">
-                            <NavLink to={"/efects/changes"} exact={false}><i className="fas fa-exchange-alt"></i><span className="nav-item-title">Metamorfozy</span></NavLink>
+                            <NavLink to={"/effects/changes"} exact={false}><i className="fas fa-exchange-alt"></i><span className="nav-item-title">Metamorfozy</span></NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink to={"/efects/measure"} exact={false}><i className="fas fa-balance-scale-right"></i><span className="nav-item-title">Pomiary</span></NavLink>
+                            <NavLink to={"/effects/measure"} exact={false}><i className="fas fa-balance-scale-right"></i><span className="nav-item-title">Pomiary</span></NavLink>
                         </li>
                     </ul>
                 </div>

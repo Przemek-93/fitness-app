@@ -137,6 +137,84 @@ paths:
             headers:
               X-Total-Count:
                 $ref: '#/components/headers/X-Total-Count'
+  /training/activity:
+    post:
+      summary: Create training activity
+      tags:
+        - Training Activity
+      requestBody:
+        description: Object with training activity properties
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/ActivityCreateRequest"
+      responses:
+        201:
+          description: Created
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActivityCreateResponse"
+  /training/activity (patch):
+    patch:
+      summary: Update training activity
+      tags:
+        - Training Activity
+      requestBody:
+        description: Object with training activity properties
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              $ref: "#/components/schemas/ActivityUpdateRequestAndResponse"
+      responses:
+        200:
+          description: OK
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/ActivityUpdateRequestAndResponse"
+  /training/activity (get):
+    get:
+      summary: Get activites by user
+      tags:
+        - Training Activity
+      responses:
+        302:
+          description: FOUND
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
+          content:
+            application/json:
+              schema:
+               items:
+                $ref: "#/components/schemas/ActivityUpdateRequestAndResponse"
+  /training/activity/{activityId}:
+    delete:
+      summary: Delete activity by id
+      tags:
+        - Training Activity
+      parameters:
+        - name: activityId
+          in: path
+          required: true
+          description: activity id
+          schema:
+            $ref: "#/components/schemas/Identifier"
+      responses:
+        200:
+          description: OK
+          headers:
+            X-Total-Count:
+              $ref: '#/components/headers/X-Total-Count'
 components:
   headers:
     X-Total-Count:
@@ -219,3 +297,58 @@ components:
         token:
           type: string
           example: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9...
+    ActivityCreateRequest:
+      properties:
+        internalId:
+          $ref: "#/components/schemas/Identifier"
+        subject:
+          type: string
+          example: Test subject
+        startTime:
+          $ref: "#/components/schemas/CreatedAt"
+        endTime:
+          $ref: "#/components/schemas/CreatedAt"
+        isAllDay:
+          type: boolean
+          example: false
+    ActivityCreateResponse:
+      properties:
+        id:
+          $ref: "#/components/schemas/Identifier"
+        internalId:
+          $ref: "#/components/schemas/Identifier"
+        subject:
+          type: string
+          example: Test subject
+        startTime:
+          $ref: "#/components/schemas/CreatedAt"
+        endTime:
+          $ref: "#/components/schemas/CreatedAt"
+        isAllDay:
+          type: boolean
+          example: false
+    ActivityUpdateRequestAndResponse:
+      properties:
+        id:
+          $ref: "#/components/schemas/Identifier"
+        internalId:
+          $ref: "#/components/schemas/Identifier"
+        subject:
+          type: string
+          example: Test subject
+        description:
+          type: string
+          example: Test description
+        location:
+          type: string
+          example: Warsaw
+        recurrenceRule:
+          type: string
+          example: FREQ=DAILY;INTERVAL=1;
+        startTime:
+          $ref: "#/components/schemas/CreatedAt"
+        endTime:
+          $ref: "#/components/schemas/CreatedAt"
+        isAllDay:
+          type: boolean
+          example: false

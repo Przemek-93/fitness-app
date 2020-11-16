@@ -18,7 +18,7 @@ class App extends Component {
                 <Router>
                     <React.Suspense fallback={loading()}>
                         <Switch>
-                            {isAuthenticated(localStorage.user) && <Route path="/" exact component={Layout}/>}
+                            {isAuthenticated(sessionStorage.user) && <Route path="/" exact component={Layout}/>}
                             <Route path="/login" component={Login}/>
                             <Route path="/register" component={Register}/>
                         </Switch>
